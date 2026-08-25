@@ -1,0 +1,71 @@
+---
+import '../styles/global.css';
+
+const {
+	title = 'Serum 66 Games Lab',
+	description = 'Serum 66 Games Lab is an indie game studio focused on experimentation, fun, and new experiences for players.'
+} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content={description} />
+		<meta name="theme-color" content="#0a0d0b" />
+		<link rel="icon" type="image/svg+xml" href="/assets/logo-icon.svg" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="container nav-wrap">
+				<a class="brand" href="/" aria-label="Serum 66 Game Labs home">
+					<!-- <img src="/assets/logo-full.svg" alt="Serum 66 Game Labs" /> -->
+					<div class="hero-mark"><img src="/assets/logo-icon.svg" alt="" /></div>
+					<span class="eyebrow">Serum 66 Games</span>
+				</a>
+				<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+				<nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+					<a href="/#games">Games</a>
+					<a href="/about">About</a>
+					<a href="/#contact">Contact</a>
+				</nav>
+			</div>
+		</header>
+		<main><slot /></main>
+		<footer class="site-footer">
+			<div class="container footer-grid">
+				<div>
+					<!-- <img class="footer-logo" src="/assets/logo-text.svg" alt="Serum 66 Game Labs" /> -->
+					<!-- <img class="footer-logo" src="/assets/logo-icon-grayscale.svg" alt="Serum 66 Games Lab" />  -->
+					<!-- <div class="hero-mark"><img src="/assets/logo-icon-grayscale.svg" alt="" /></div> -->
+					<!-- <p class="kicker">SERUM 66 GAMES LAB</p> -->
+					 <img class="footer-logo" src="/assets/logo-full-grayscale.svg" alt="Serum 66 Games Lab" /> 
+					<p>Experimental games. Refined.</p>
+				</div>
+				<div class="footer-links">
+					<a href="https://store.steampowered.com/" target="_blank" rel="noreferrer">Steam</a>
+					<a href="#">X</a>
+					<a href="#">Discord</a>
+					<a href="#">YouTube</a>
+					<a href="#">Instagram</a>
+					<a href="#">TikTok</a>
+					<a href="#">itch.io</a>
+				</div>
+			</div>
+			<div class="container footer-bottom">
+				<span>© {new Date().getFullYear()} Serum 66 Game Labs</span>
+				<span>Built for weird ideas and good games.</span>
+			</div>
+		</footer>
+		<script>
+			const toggle = document.querySelector('.menu-toggle');
+			const nav = document.querySelector('#site-nav');
+			toggle?.addEventListener('click', () => {
+				const open = toggle.getAttribute('aria-expanded') === 'true';
+				toggle.setAttribute('aria-expanded', String(!open));
+				nav?.classList.toggle('is-open');
+			});
+		</script>
+	</body>
+</html>
