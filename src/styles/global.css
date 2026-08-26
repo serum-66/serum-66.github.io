@@ -9,9 +9,32 @@
 	--line: rgba(255, 255, 255, 0.12);
 	--shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
 	--radius: 20px;
-	font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	font-family: "Play", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 	color-scheme: dark;
 }
+
+.play-regular {
+  font-family: "Play", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.play-bold {
+  font-family: "Play", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.bitcount-regular {
+  font-family: "Bitcount", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0;
+}
+
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -44,7 +67,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 	margin-bottom: 4px; 
 	filter: drop-shadow(0 0 22px rgba(52,219,58,.25)); 
 }
-.kicker, .eyebrow { margin: 0 0 14px; font-size: .74rem; font-weight: 800; letter-spacing: .18em; color: var(--green); }
+.kicker, .eyebrow { margin: 0 0 14px; font-size: .9rem; font-weight: 900; letter-spacing: .12em; color: var(--green); }
 h1, h2, h3 { line-height: 1.05; letter-spacing: -.045em; margin: 0; }
 h1 { font-size: clamp(3.7rem, 8vw, 7.2rem); max-width: 780px; }
 h1 span, h2 span { color: var(--green); }
@@ -55,11 +78,312 @@ h1 span, h2 span { color: var(--green); }
 .button-primary { color: var(--black); background: var(--green); }
 .button-ghost { background: rgba(255,255,255,.03); }
 
-.hero-visual { position: relative; min-height: 470px; display: grid; place-items: center; }
+/* .hero-visual { position: relative; min-height: 470px; display: grid; place-items: center; }
 .lab-orb { width: min(360px, 70vw); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 38% 30%, #b8ffbb 0, var(--green) 12%, rgba(52,219,58,.82) 32%, rgba(52,219,58,.15) 62%, transparent 70%); box-shadow: 0 0 90px rgba(52,219,58,.2); border: 1px solid rgba(117,238,120,.55); }
 .lab-ring { position: absolute; border: 1px solid rgba(117,238,120,.35); border-radius: 50%; }
 .ring-a { width: 390px; height: 240px; transform: rotate(-22deg); }
-.ring-b { width: 460px; height: 280px; transform: rotate(37deg); opacity: .5; }
+.ring-b { width: 460px; height: 280px; transform: rotate(37deg); opacity: .5; } */
+
+
+
+
+
+
+
+/* .hero-visual { position: relative; min-height: 470px; display: grid; place-items: center; }
+.lab-orb { width: min(360px, 70vw); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 38% 30%, #b8ffbb 0, var(--green) 12%, rgba(52,219,58,.82) 32%, rgba(52,219,58,.15) 62%, transparent 70%); box-shadow: 0 0 90px rgba(52,219,58,.2); border: 1px solid rgba(117,238,120,.55); }
+.lab-ring { position: absolute; border: 1px solid rgba(117,238,120,.35); border-radius: 50%; }
+.ring-a { 
+  width: 390px; 
+  height: 240px; 
+  animation: rotateRingA 12s linear infinite; 
+}
+.ring-b { 
+  width: 460px; 
+  height: 280px; 
+  opacity: .5; 
+  animation: rotateRingB 18s linear infinite; 
+}
+@keyframes rotateRingA {
+  from {
+    transform: rotate(-22deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotate(-22deg) rotateZ(360deg);
+  }
+}
+@keyframes rotateRingB {
+  from {
+    transform: rotate(37deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotate(37deg) rotateZ(360deg);
+  }
+} */
+
+
+
+
+
+ .hero-visual { 
+  position: relative; 
+  min-height: 470px; 
+  display: grid; 
+  place-items: center; 
+  perspective: 800px;
+  transform-style: preserve-3d;
+}
+/* 
+.lab-orb { 
+  width: min(360px, 70vw); 
+  aspect-ratio: 1; 
+  border-radius: 50%; 
+  background: radial-gradient(circle at 38% 30%, #b8ffbb 0, var(--green) 12%, rgba(52,219,58,.82) 32%, rgba(52,219,58,.15) 62%, transparent 70%); 
+  box-shadow: 0 0 90px rgba(52,219,58,.2); 
+  border: 1px solid rgba(117,238,120,.55); 
+} */
+
+.lab-orb { 
+  width: min(270px, 60vw); 
+  aspect-ratio: 1; 
+  border-radius: 50%; 
+  background: radial-gradient(circle at 38% 30%, #b8ffbb 0, var(--green) 12%, rgba(52,219,58,.82) 32%, rgba(52,219,58,.15) 62%, transparent 70%); 
+  /* opacity:0.7; */
+  
+  box-shadow: 0 0 90px rgba(52, 219, 58, 0.2); 
+  /* border: 1px solid rgba(117, 238, 120, 0.55);  */
+  
+  animation: orbPulse 4s ease-in-out infinite alternate;
+  transform-style: preserve-3d;
+}
+
+@keyframes orbPulse {
+  0% {
+    box-shadow: 0 0 60px rgba(52, 219, 58, 0.15),
+                0 0 20px rgba(52, 219, 58, 0.1);
+    border-color: rgba(117, 238, 120, 0.35);
+	opacity:0.9;
+	transform: rotateY(-5deg) rotateX(-5deg) rotateZ(0deg);
+  }
+  100% {
+    box-shadow: 0 0 90px rgba(11, 219, 18, 0.3),
+                0 0 40px rgba(184, 255, 187, 0.2);
+    border-color: rgba(63, 226, 66, 0.85);
+	opacity:1.0;
+	transform: rotateY(5deg) rotateX(5deg) rotateZ(0deg);
+  }
+}
+
+.orbit-axis {
+  position: absolute;
+  width: 440px;
+  height: 440px;
+  transform-style: preserve-3d;
+}
+
+.axis-a {
+	width:80%;
+	height:80%;
+  transform: rotateX(70deg) rotateY(20deg);
+}
+
+.axis-b {
+	width:80%;
+	height:80%;
+  transform: rotateX(70deg) rotateY(20deg);
+}
+
+.axis-c {
+	width:80%;
+	height:80%;
+  transform: rotateX(70deg) rotateY(20deg);
+}
+
+.axis-d {
+	width:80%;
+	height:80%;
+  transform: rotateX(70deg) rotateY(20deg);
+}
+
+.lab-ring {
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(117,238,120,.5);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.lab-ring::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%; 
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%); 
+  box-shadow: 
+    0 0 10px #b8ffbb,
+    0 0 20px var(--green),
+    0 0 30px var(--green);
+}
+
+/* .ring-b::after {
+  width: 8px;
+  height: 8px;
+  background-color: #b8ffbb;
+  box-shadow: 
+    0 0 8px #b8ffbb,
+    0 0 15px var(--green);
+} */
+
+
+/* Animate the ring spinning inside the tilted parent axis */
+.axis-a {
+  /* animation: spinAxisY 8s linear infinite; */
+  animation: spinAxisY 4s ease-in-out infinite alternate;
+}
+
+.axis-b {
+  /* animation: spinAxisY 12s linear infinite reverse; */
+  animation: spinAxisY 5s ease-in-out infinite alternate;
+}
+
+.axis-c {
+  /* animation: spinAxisY 12s linear infinite reverse; */
+  animation: spinAxisY 6s ease-in-out infinite alternate;
+}
+
+/* .ring-c {
+  animation: spinAxisX 8s linear infinite;
+}
+
+.ring-d {
+  animation: spinAxisX 8s linear infinite reverse;
+} */
+
+@keyframes spinAxisY {
+  from {
+    transform: rotateY(-5deg) rotateX(-5deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateY(5deg) rotateX(5deg) rotateZ(0deg);
+  }
+}
+
+@keyframes spinAxisX {
+  from {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+  to {
+    transform: rotateY(0deg) rotateX(360deg);
+  }
+}
+
+
+
+
+
+/* Base Orbit Axis Wrapper (Locks the 3D Tilt in Place) */
+.orbit-axis {
+  position: absolute;
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+
+/* Static 3D Tilt for Outer Ring */
+.axis-a {
+  width: 270px;
+  height: 270px;
+  /* transform: rotateX(70deg) rotateY(-20deg); */
+}
+
+/* Static 3D Tilt for Inner Ring */
+.axis-b {
+  width: 320px;
+  height: 320px;
+  /* transform: rotateX(60deg) rotateY(40deg); */
+}
+
+.axis-c {
+  width: 370px;
+  height: 370px;
+  /* transform: rotateX(60deg) rotateY(40deg); */
+}
+
+/* Ring & Trail Container (Spins inside the static 3D plane) */
+.lab-ring {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 50%;
+
+  /* background: conic-gradient(
+    from 90deg, 
+    transparent 0deg, 
+    transparent 180deg, 
+    rgba(52, 219, 58, 0.15) 280deg, 
+    rgba(117, 238, 120, 0.8) 355deg, 
+    #ffffff 360deg
+  );
+  
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px)); */
+}
+
+/* Continuous 2D orbit along the fixed 3D plane */
+.ring-a {
+  animation: orbitNode 4s linear infinite;
+}
+
+.ring-b {
+  animation: orbitNode 5s linear infinite;
+}
+
+.ring-c {
+  animation: orbitNode 6s linear infinite;
+}
+
+/* 2D Spin along the ring's circular plane */
+@keyframes orbitNode {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+/* Glowing Node attached to the head of the spinning gradient trail */
+/* .lab-ring::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 
+    0 0 10px #b8ffbb,
+    0 0 20px rgba(52, 219, 58, 0.9),
+    0 0 30px rgba(52, 219, 58, 0.8);
+} */
+
+/* .ring-b::after {
+  width: 8px;
+  height: 8px;
+  background-color: #b8ffbb;
+  box-shadow: 
+    0 0 8px #b8ffbb,
+    0 0 16px rgba(52, 219, 58, 0.8);
+} */
+
+
+
+
 .lab-label { position: absolute; bottom: 44px; right: 34px; font: 700 .68rem/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .12em; color: var(--muted); }
 .lab-label span { color: var(--green); }
 
