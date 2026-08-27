@@ -68,6 +68,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 	filter: drop-shadow(0 0 22px rgba(52,219,58,.25)); 
 }
 .kicker, .eyebrow { margin: 0 0 14px; font-size: .9rem; font-weight: 900; letter-spacing: .12em; color: var(--green); }
+.in-production { display:inline-flex; align-items:center; gap:9px; color:var(--green-bright); text-transform:uppercase; letter-spacing:.17em; font-size:.78rem; font-weight:800; margin-top:4px; }
+.in-production::before { content:""; width:9px; height:9px; border-radius:50%; background:var(--green); box-shadow:0 0 18px rgba(52,219,58,.8); }
+/* .eyebrow::before { content:""; width:9px; height:9px; border-radius:50%; background:var(--green); box-shadow:0 0 18px rgba(52,219,58,.8); } */
 h1, h2, h3 { line-height: 1.05; letter-spacing: -.045em; margin: 0; }
 h1 { font-size: clamp(3.7rem, 8vw, 7.2rem); max-width: 780px; }
 h1 span, h2 span { color: var(--green); }
