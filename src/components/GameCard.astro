@@ -1,7 +1,7 @@
 ---
 const { title, genre, status, description, href } = Astro.props;
 ---
-<article class="game-card">
+<!-- <article class="game-card">
 	<div class="game-art" aria-hidden="true">
 		<div class="scanline"></div>
 		<span>{title}</span>
@@ -12,4 +12,13 @@ const { title, genre, status, description, href } = Astro.props;
 		<p>{description}</p>
 		<a class="text-link" href={href}>View project <span aria-hidden="true">↗</span></a>
 	</div>
+</article> -->
+<article class="game-card">
+    <div class="eyebrow">{genre}</div>
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <div class="card-foot">
+        <span class="status">{status}</span>
+        <a class="text-link" href={href}>View project →</a>
+    </div>
 </article>
