@@ -49,7 +49,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .site-header { position: sticky; top: 0; z-index: 50; background: rgba(10, 13, 11, 0.82); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
 .nav-wrap { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
 /* .brand img { width: 136px; height: auto; margin: 5px 0 10px 0 } */
-.brand { display:flex; align-items:center; gap:12px; 
+.brand { display:flex; align-items:center; gap:6px; 
 	/* font-weight:800; letter-spacing:.04em;  */
 }
 /* .brand img { width: 42px; } */
@@ -289,28 +289,30 @@ h1 span, h2 span { color: var(--green); }
 
 @keyframes orbGlowCycle {
   0% {
-    opacity: 0.9;
-    filter: brightness(0.7) contrast(1.1);
-  }
-  100% {
     opacity: 1.0;
     filter: brightness(1.0) contrast(1.0);
+    
+  }
+  100% {
+    opacity: 0.9;
+    filter: brightness(0.7) contrast(1.1);
   }
 }
 
 @keyframes orbPulse {
   0% {
-    box-shadow: 0 0 60px rgba(52, 219, 58, 0.15),
-                0 0 20px rgba(52, 219, 58, 0.1);
-    border-color: rgba(117, 238, 120, 0.35);
-    opacity: 0.9;
-    transform: rotateY(-5deg) rotateX(-5deg) rotateZ(0deg) translateZ(-5px);
-  }
-  100% {
     box-shadow: 0 0 90px rgba(11, 219, 18, 0.3),
                 0 0 40px rgba(184, 255, 187, 0.2);
     border-color: rgba(63, 226, 66, 0.85);
     opacity: 1.0;
+
+    transform: rotateY(-5deg) rotateX(-5deg) rotateZ(0deg) translateZ(-5px);
+  }
+  100% {
+    box-shadow: 0 0 60px rgba(52, 219, 58, 0.15),
+                0 0 20px rgba(52, 219, 58, 0.1);
+    border-color: rgba(117, 238, 120, 0.35);
+    opacity: 0.9;
     transform: rotateY(5deg) rotateX(5deg) rotateZ(0deg) translateZ(-5px);
   }
 }

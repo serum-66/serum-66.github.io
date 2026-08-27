@@ -2,8 +2,8 @@
 import '../styles/global.css';
 
 const {
-	title = 'Serum 66 Games Lab',
-	description = 'Serum 66 Games Lab is an indie game studio focused on experimentation, fun, and new experiences for players.'
+	title = 'Serum 66 Games',
+	description = 'Serum 66 Games is an indie game studio focused on experimentation, fun, and new experiences for players.'
 } = Astro.props;
 ---
 <!doctype html>
@@ -22,13 +22,15 @@ const {
 	<body>
 		<header class="site-header">
 			<div class="container nav-wrap">
-				<a class="brand" href="/" aria-label="Serum 66 Game Labs home">
+				<a class="brand" href="/" aria-label="Serum 66 Games home">
 					<!-- <img src="/assets/logo-full.svg" alt="Serum 66 Game Labs" /> -->
 					<div class="hero-mark"><img src="/assets/logo-icon.svg" alt="" /></div>
-					<span class="eyebrow">Serum 66 Games</span>
+					<span><img style="height:24px; position:relative; top:3px;" src="/assets/logo-text-horizontal-green-nodrop.svg" alt="" /></span>
+					<!-- <span class="eyebrow">Serum 66 Games</span> -->
 				</a>
 				<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
 				<nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+					<a href="/">Home</a>
 					<a href="/#games">Games</a>
 					<a href="/about">About</a>
 					<a href="/#contact">Contact</a>
@@ -39,11 +41,11 @@ const {
 		<footer class="site-footer">
 			<div class="container footer-grid">
 				<div>
-					<!-- <img class="footer-logo" src="/assets/logo-text.svg" alt="Serum 66 Game Labs" /> -->
-					<!-- <img class="footer-logo" src="/assets/logo-icon-grayscale.svg" alt="Serum 66 Games Lab" />  -->
+					<!-- <img class="footer-logo" src="/assets/logo-text.svg" alt="Serum 66 Games" /> -->
+					<!-- <img class="footer-logo" src="/assets/logo-icon-grayscale.svg" alt="Serum 66 Games" />  -->
 					<!-- <div class="hero-mark"><img src="/assets/logo-icon-grayscale.svg" alt="" /></div> -->
 					<!-- <p class="kicker">SERUM 66 GAMES LAB</p> -->
-					 <img class="footer-logo" src="/assets/logo-full-grayscale.svg" alt="Serum 66 Games Lab" style="opacity:0.67"/> 
+					 <img class="footer-logo" src="/assets/logo-full-grayscale-alt.svg" alt="Serum 66 Games" style="opacity:1"/> 
 					<p>Experimental games. Refined.</p>
 				</div>
 				<div class="footer-links">
@@ -57,8 +59,8 @@ const {
 				</div>
 			</div>
 			<div class="container footer-bottom">
-				<span>© {new Date().getFullYear()} Serum 66 Game Labs</span>
-				<span>Built for weird ideas and good games.</span>
+				<span>© {new Date().getFullYear()} Serum 66 LLC</span>
+				<!-- <span>Built for weird ideas and good games.</span> -->
 			</div>
 		</footer>
 		<script>
