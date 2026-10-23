@@ -662,8 +662,8 @@ h1 span, h2 span { color: var(--green); }
 .carousel-thumb img { width: 100%; height: 100%; object-fit: cover; }
 .carousel-thumb:hover { opacity: .85; }
 .carousel-thumb.is-active { opacity: 1; border-color: var(--green); }
-.play-badge { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(0,0,0,.3); }
-.play-badge::before { content: ""; width: 30px; height: 30px; border-radius: 50%; background: rgba(10,13,11,.75) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 7l9 5-9 5z' fill='%2334db3a'/%3E%3C/svg%3E") center / 18px no-repeat; border: 1px solid rgba(52,219,58,.6); }
+.play-badge { position: absolute; right: 6px; bottom: 6px; display: grid; }
+.play-badge::before { content: ""; width: 22px; height: 22px; border-radius: 50%; background: rgba(10,13,11,.75) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 7l9 5-9 5z' fill='%2334db3a'/%3E%3C/svg%3E") center / 14px no-repeat; border: 1px solid rgba(52,219,58,.6); }
 .feature-clip { width: 100%; aspect-ratio: 1170 / 370; display: block; margin-bottom: 22px; border-radius: 12px; background: var(--black); }
 .game-facts { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 22px; margin: 50px 0 0; padding-top: 34px; border-top: 1px solid var(--line); }
 .game-facts dt { margin-bottom: 8px; font: 700 .72rem/1 ui-monospace, monospace; letter-spacing: .15em; text-transform: uppercase; color: var(--green); }
