@@ -2,3 +2,6 @@ node_modules/
 dist/
 .astro/
 .DS_Store
+
+# Source Steam store/library art (site uses optimized WebP/JPG copies)
+public/assets/games/*/*.png
