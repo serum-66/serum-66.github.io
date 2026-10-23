@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FeatureClip from '../../components/FeatureClip.astro';
-import ScreenshotGallery from '../../components/ScreenshotGallery.astro';
+import MediaCarousel from '../../components/MediaCarousel.astro';
 
 const media = '/assets/games/heroes-of-underhollow';
 ---
@@ -19,9 +19,7 @@ const media = '/assets/games/heroes-of-underhollow';
 	</section>
 	<section class="section">
 		<div class="container">
-			<video class="game-trailer" controls preload="none" playsinline poster={`${media}/shot-01.webp`}>
-				<source src={`${media}/trailer.mp4`} type="video/mp4" />
-			</video>
+			<MediaCarousel title="Heroes of Underhollow" media={media} count={12} />
 		</div>
 	</section>
 	<section class="section game-about">
@@ -63,5 +61,4 @@ const media = '/assets/games/heroes-of-underhollow';
 			</dl>
 		</div>
 	</section>
-	<ScreenshotGallery title="Heroes of Underhollow" media={media} count={12} />
 </BaseLayout>

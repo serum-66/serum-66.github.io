@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FeatureClip from '../../components/FeatureClip.astro';
-import ScreenshotGallery from '../../components/ScreenshotGallery.astro';
+import MediaCarousel from '../../components/MediaCarousel.astro';
 
 const media = '/assets/games/luckys-scratch-house';
 ---
@@ -19,9 +19,7 @@ const media = '/assets/games/luckys-scratch-house';
 	</section>
 	<section class="section">
 		<div class="container">
-			<video class="game-trailer" controls preload="none" playsinline poster={`${media}/shot-01.webp`}>
-				<source src={`${media}/trailer.mp4`} type="video/mp4" />
-			</video>
+			<MediaCarousel title="Lucky's Scratch House" media={media} count={7} />
 		</div>
 	</section>
 	<section class="section game-about">
@@ -61,5 +59,4 @@ const media = '/assets/games/luckys-scratch-house';
 			</dl>
 		</div>
 	</section>
-	<ScreenshotGallery title="Lucky's Scratch House" media={media} count={7} />
 </BaseLayout>

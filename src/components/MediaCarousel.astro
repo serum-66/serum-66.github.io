@@ -1,0 +1,65 @@
+---
+// Steam-style media viewer: trailer first, then screenshots, with a thumbnail strip to switch between them.
+// Screenshots live at {media}/shot-NN.webp with a matching shot-NN-thumb.webp; the trailer at {media}/trailer.mp4.
+const { title, media, count } = Astro.props;
+const shots = Array.from({ length: count }, (_, i) => `${media}/shot-${String(i + 1).padStart(2, '0')}`);
+---
+<div class="media-carousel" data-carousel>
+	<div class="carousel-stage">
+		<video class="carousel-item is-active" controls preload="none" playsinline poster={`${media}/trailer-poster.webp`}>
+			<source src={`${media}/trailer.mp4`} type="video/mp4" />
+		</video>
+		{shots.map((shot, i) => (
+			<img class="carousel-item" src={`${shot}.webp`} alt={`${title} screenshot ${i + 1}`} loading="lazy" width="1920" height="1080" />
+		))}
+		<button class="carousel-arrow carousel-prev" type="button" aria-label="Previous">‹</button>
+		<button class="carousel-arrow carousel-next" type="button" aria-label="Next">›</button>
+	</div>
+	<div class="carousel-thumbs">
+		<button class="carousel-thumb is-active" type="button" aria-label="Trailer" aria-current="true">
+			<img src={`${media}/trailer-poster-thumb.webp`} alt="" width="640" height="360" />
+			<span class="play-badge" aria-hidden="true"></span>
+		</button>
+		{shots.map((shot, i) => (
+			<button class="carousel-thumb" type="button" aria-label={`Screenshot ${i + 1}`}>
+				<img src={`${shot}-thumb.webp`} alt="" loading="lazy" width="640" height="360" />
+			</button>
+		))}
+	</div>
+</div>
+
+<script>
+	document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+		const items = [...carousel.querySelectorAll('.carousel-item')];
+		const thumbs = [...carousel.querySelectorAll('.carousel-thumb')];
+		const strip = carousel.querySelector('.carousel-thumbs');
+		let current = 0;
+
+		const select = (index) => {
+			current = (index + items.length) % items.length;
+			items.forEach((item, i) => {
+				item.classList.toggle('is-active', i === current);
+				if (i !== current && item instanceof HTMLVideoElement) item.pause();
+			});
+			thumbs.forEach((thumb, i) => {
+				thumb.classList.toggle('is-active', i === current);
+				thumb.toggleAttribute('aria-current', i === current);
+			});
+			// Keep the selected thumbnail in view without scrolling the page
+			const thumb = thumbs[current];
+			const left = thumb.offsetLeft;
+			if (left < strip.scrollLeft || left + thumb.offsetWidth > strip.scrollLeft + strip.clientWidth) {
+				strip.scrollTo({ left: left - (strip.clientWidth - thumb.offsetWidth) / 2, behavior: 'smooth' });
+			}
+		};
+
+		thumbs.forEach((thumb, i) => thumb.addEventListener('click', () => select(i)));
+		carousel.querySelector('.carousel-prev').addEventListener('click', () => select(current - 1));
+		carousel.querySelector('.carousel-next').addEventListener('click', () => select(current + 1));
+		carousel.addEventListener('keydown', (e) => {
+			if (e.target instanceof HTMLVideoElement) return;
+			if (e.key === 'ArrowLeft') select(current - 1);
+			if (e.key === 'ArrowRight') select(current + 1);
+		});
+	});
+</script>
