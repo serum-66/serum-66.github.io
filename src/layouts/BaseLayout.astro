@@ -3,7 +3,8 @@ import '../styles/global.css';
 
 const {
 	title = 'Serum 66 Games',
-	description = 'Serum 66 Games is an indie game development studio focused on experimentation, fun, and creating new experiences for players.'
+	description = 'Serum 66 Games is an indie game development studio focused on experimentation, fun, and creating new experiences for players.',
+	image
 } = Astro.props;
 ---
 <!doctype html>
@@ -13,6 +14,10 @@ const {
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content={description} />
 		<meta name="theme-color" content="#0a0d0b" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		{image && <meta property="og:image" content={new URL(image, Astro.site)} />}
+		{image && <meta name="twitter:card" content="summary_large_image" />}
 		<link rel="icon" type="image/svg+xml" href="/assets/logo-icon.svg" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

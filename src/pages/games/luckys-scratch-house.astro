@@ -5,14 +5,14 @@ import MediaCarousel from '../../components/MediaCarousel.astro';
 
 const media = '/assets/games/luckys-scratch-house';
 ---
-<BaseLayout title="Lucky's Scratch House — Serum 66 Games">
-	<section class="page-hero game-page-hero">
+<BaseLayout title="Lucky's Scratch House — Serum 66 Games" description="A physics-based multiplayer bar hangout. Shoot pool, throw darts, and mess with the place and its regulars." image={`${media}/share.jpg`}>
+	<section class="page-hero game-page-hero has-art" style={`--hero-art: url(${media}/hero.webp)`}>
 		<div class="container narrow">
 			<div style="display:flex; justify-content: space-between;">
 				<p class="eyebrow">CASUAL SPORTS SIMULATION</p>
 				<span class="status in-production"><span style="margin-top:2px;">PRE-RELEASE</span></span>
 			</div>
-			<h1>Lucky's Scratch House</h1>
+			<h1 class="game-logo"><img src={`${media}/logo.webp`} alt="Lucky's Scratch House" width="1000" height="590" /></h1>
 			<p>A physics-based multiplayer bar hangout. Meet up with friends, shoot pool, play darts and other bar games, and see what happens when you start messing with the place and its regulars.</p>
 			<a class="button button-primary" href="https://store.steampowered.com/app/5327630/Luckys_Scratch_House/" target="_blank" rel="noreferrer">Wishlist on Steam</a>
 		</div>

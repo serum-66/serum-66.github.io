@@ -5,14 +5,14 @@ import MediaCarousel from '../../components/MediaCarousel.astro';
 
 const media = '/assets/games/heroes-of-underhollow';
 ---
-<BaseLayout title="Heroes of Underhollow — Serum 66 Games">
-	<section class="page-hero game-page-hero">
+<BaseLayout title="Heroes of Underhollow — Serum 66 Games" description="A turn-based tactical roguelike where the battlefield is your weapon." image={`${media}/share.jpg`}>
+	<section class="page-hero game-page-hero has-art" style={`--hero-art: url(${media}/hero.webp)`}>
 		<div class="container narrow">
 			<div style="display:flex; justify-content: space-between;">
 				<p class="eyebrow">TACTICAL ROGUELIKE</p>
 				<span class="status in-production"><span style="margin-top:2px;">PRE-RELEASE</span></span>
 			</div>
-			<h1>Heroes of Underhollow</h1>
+			<h1 class="game-logo"><img src={`${media}/logo.webp`} alt="Heroes of Underhollow" width="1000" height="463" /></h1>
 			<p>Descend into Underhollow, a turn-based tactical roguelike where the battlefield is your weapon. Ignite oil, electrify water, and shove enemies into hazards. Choose from three heroes, shape your build, and chart a dangerous route through four dungeon floors.</p>
 			<a class="button button-primary" href="https://store.steampowered.com/app/5480070/Heroes_of_Underhollow/" target="_blank" rel="noreferrer">Wishlist on Steam</a>
 		</div>

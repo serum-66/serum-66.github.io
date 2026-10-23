@@ -1,5 +1,5 @@
 ---
-const { title, genre, status, description, href } = Astro.props;
+const { title, genre, status, description, href, art, logo } = Astro.props;
 ---
 <!-- <article class="game-card">
 	<div class="game-art" aria-hidden="true">
@@ -13,10 +13,13 @@ const { title, genre, status, description, href } = Astro.props;
 		<a class="text-link" href={href}>View project <span aria-hidden="true">↗</span></a>
 	</div>
 </article> -->
-<article class="game-card">
+<article class:list={['game-card', { 'has-art': art }]}>
+	{art && <img class="game-card-art" src={art} alt="" loading="lazy" />}
 	<div class="eyebrow">{genre}</div>
-    <h3>{title}</h3>
-	
+    {logo
+        ? <h3 class="game-card-logo"><img src={logo} alt={title} loading="lazy" /></h3>
+        : <h3>{title}</h3>}
+
     <p>{description}</p>
     <div class="card-foot">
         <span class="status in-production"><span style="margin-top:2px;">{status}</span></span>

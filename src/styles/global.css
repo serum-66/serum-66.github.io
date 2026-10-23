@@ -635,6 +635,18 @@ h1 span, h2 span { color: var(--green); }
 .feature-card p { color: var(--muted); margin: 0 0 14px; }
 .feature-card p:last-child { margin-bottom: 0; }
 .feature-card strong { color: var(--green); }
+.game-page-hero.has-art { position: relative; background: linear-gradient(90deg, rgba(10,13,11,.94) 0%, rgba(10,13,11,.78) 45%, rgba(10,13,11,.35) 100%), linear-gradient(0deg, var(--black) 0%, transparent 35%), var(--hero-art) center / cover no-repeat; }
+.game-logo { margin: 6px 0 0; }
+.game-logo img { width: min(520px, 100%); height: auto; filter: drop-shadow(0 12px 30px rgba(0,0,0,.6)); }
+
+.game-card.has-art::before { display: none; }
+.game-card-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 70% center; opacity: .5; transition: opacity .3s ease, transform .6s ease; }
+.game-card.has-art::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8,13,8,.95) 0%, rgba(8,13,8,.7) 50%, rgba(8,13,8,.2) 100%); }
+.game-card.has-art:hover .game-card-art { opacity: .65; transform: scale(1.03); }
+.game-card.has-art > :not(.game-card-art) { position: relative; z-index: 1; }
+.game-card.has-art > .card-foot { position: absolute; }
+.game-card-logo img { width: auto; max-width: min(340px, 85%); max-height: 170px; filter: drop-shadow(0 10px 24px rgba(0,0,0,.6)); }
+
 .media-carousel { display: grid; gap: 12px; }
 .carousel-stage { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #000; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
 .carousel-item { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: none; }
