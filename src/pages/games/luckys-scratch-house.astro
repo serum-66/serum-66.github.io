@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FeatureClip from '../../components/FeatureClip.astro';
+import ScreenshotGallery from '../../components/ScreenshotGallery.astro';
+
+const media = '/assets/games/luckys-scratch-house';
+---
+<BaseLayout title="Lucky's Scratch House — Serum 66 Games">
+	<section class="page-hero game-page-hero">
+		<div class="container narrow">
+			<div style="display:flex; justify-content: space-between;">
+				<p class="eyebrow">CASUAL SPORTS SIMULATION</p>
+				<span class="status in-production"><span style="margin-top:2px;">PRE-RELEASE</span></span>
+			</div>
+			<h1>Lucky's Scratch House</h1>
+			<p>A physics-based multiplayer bar hangout. Meet up with friends, shoot pool, play darts and other bar games, and see what happens when you start messing with the place and its regulars.</p>
+			<a class="button button-primary" href="https://store.steampowered.com/app/5327630/Luckys_Scratch_House/" target="_blank" rel="noreferrer">Wishlist on Steam</a>
+		</div>
+	</section>
+	<section class="section">
+		<div class="container">
+			<video class="game-trailer" controls preload="none" playsinline poster={`${media}/shot-01.webp`}>
+				<source src={`${media}/trailer.mp4`} type="video/mp4" />
+			</video>
+		</div>
+	</section>
+	<section class="section game-about">
+		<div class="container">
+			<div class="prose-grid">
+				<div><p class="eyebrow">ABOUT THE GAME</p><h2>Come for the pool. <span>Stay until the bouncer throws you out.</span></h2></div>
+				<div>
+					<p>Lucky’s Scratch House is a physics-based multiplayer bar hangout where a quiet night shooting pool can get out of hand. Bring your friends, grab a drink, pick something on the jukebox, and settle in for a few games. What happens between turns is up to you.</p>
+				</div>
+			</div>
+			<div class="feature-grid">
+				<article class="feature-card">
+					<FeatureClip src={`${media}/clip-games`} />
+					<h3>Shoot pool. Throw darts. Play your hand.</h3>
+					<p>Grab a cue for 8-ball or 9-ball pool, step up to the dartboard for 301, 501, or Cricket, or take a seat at the card table for Blackjack and Texas Hold’em. Choose casual bar rules, tournament rules, or your own custom settings for pool and darts. Play for bragging rights, earn some spending money, and insist that last shot was intentional.</p>
+				</article>
+				<article class="feature-card">
+					<FeatureClip src={`${media}/clip-hangout`} />
+					<h3>Make yourself at home.</h3>
+					<p>Customize your character, order a beer from Lucky, and put on a song. Try your luck with a scratch ticket or spend the evening hanging around while your friends play. There’s always time for another round.</p>
+				</article>
+				<article class="feature-card">
+					<FeatureClip src={`${media}/clip-trouble`} />
+					<h3>Try to behave.</h3>
+					<p>Throw your drink, shove your friends, and discover how quickly everyone ends up on the floor. The regulars notice when you start causing trouble, and they might shove back. Pick a fight with Lucky and the bouncer will personally show you the exit.</p>
+				</article>
+				<article class="feature-card">
+					<h3>Flying solo?</h3>
+					<p>Challenge the bar’s regulars to pool, darts, or cards, practice your shots, or settle into the booth for solitaire. You don’t need a full group to spend a night at Lucky’s.</p>
+				</article>
+			</div>
+			<dl class="game-facts">
+				<div><dt>Release</dt><dd>Coming soon to Early Access</dd></div>
+				<div><dt>Modes</dt><dd>Single-player, Multiplayer</dd></div>
+				<div><dt>Platforms</dt><dd>Windows, SteamOS + Linux</dd></div>
+				<div><dt>Languages</dt><dd>English</dd></div>
+			</dl>
+		</div>
+	</section>
+	<ScreenshotGallery title="Lucky's Scratch House" media={media} count={7} />
+</BaseLayout>

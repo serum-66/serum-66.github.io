@@ -26,7 +26,6 @@ Configure the DNS records for `serum66.com` with your domain provider according 
 Replace placeholders for:
 
 - Royal Guard screenshots, description, store links and trailer
-- Normal Billiards screenshots, description and status
 - Official social URLs
 - Studio email/contact information
 - Final tagline

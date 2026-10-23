@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FeatureClip from '../../components/FeatureClip.astro';
+import ScreenshotGallery from '../../components/ScreenshotGallery.astro';
+
+const media = '/assets/games/heroes-of-underhollow';
+---
+<BaseLayout title="Heroes of Underhollow — Serum 66 Games">
+	<section class="page-hero game-page-hero">
+		<div class="container narrow">
+			<div style="display:flex; justify-content: space-between;">
+				<p class="eyebrow">TACTICAL ROGUELIKE</p>
+				<span class="status in-production"><span style="margin-top:2px;">PRE-RELEASE</span></span>
+			</div>
+			<h1>Heroes of Underhollow</h1>
+			<p>Descend into Underhollow, a turn-based tactical roguelike where the battlefield is your weapon. Ignite oil, electrify water, and shove enemies into hazards. Choose from three heroes, shape your build, and chart a dangerous route through four dungeon floors.</p>
+			<a class="button button-primary" href="https://store.steampowered.com/app/5480070/Heroes_of_Underhollow/" target="_blank" rel="noreferrer">Wishlist on Steam</a>
+		</div>
+	</section>
+	<section class="section">
+		<div class="container">
+			<video class="game-trailer" controls preload="none" playsinline poster={`${media}/shot-01.webp`}>
+				<source src={`${media}/trailer.mp4`} type="video/mp4" />
+			</video>
+		</div>
+	</section>
+	<section class="section game-about">
+		<div class="container">
+			<div class="prose-grid">
+				<div><p class="eyebrow">ABOUT THE GAME</p><h2>Every fight <span>leaves its mark.</span></h2></div>
+				<div>
+					<p>Underhollow is a single-player tactical roguelike that combines free-movement, turn-based combat with a branching dungeon descent. Lead one hero through four dangerous floors, building your abilities and managing the resources that keep you alive.</p>
+					<p>Health, physical armour, magic resistance, and supplies carry between encounters. Winning the room is only part of surviving the run.</p>
+				</div>
+			</div>
+			<div class="feature-grid">
+				<article class="feature-card">
+					<FeatureClip src={`${media}/clip-heroes`} />
+					<h3>Choose your hero</h3>
+					<p><strong>Warden:</strong> Build Momentum through movement, smash through armour, and send enemies crashing into hazards.</p>
+					<p><strong>Ranger:</strong> Build Focus for powerful bow shots, control your distance, and reshape the battlefield with elemental arrows.</p>
+					<p><strong>Magus:</strong> Alternate spell elements to build Attunement, setting up combinations of water, lightning, frost, and fire.</p>
+					<p>Each hero has a branching skill tree with six paths and late-run mastery upgrades. Combine paths, learn abilities, and assemble equipment and trinkets around your chosen approach.</p>
+				</article>
+				<article class="feature-card">
+					<FeatureClip src={`${media}/clip-battlefield`} />
+					<h3>Turn the battlefield into a weapon</h3>
+					<p>Spend action points to move freely, attack, and combine abilities. Use cover and high ground, break enemy defences, and create openings for disabling effects.</p>
+					<p>Ignite oil slicks. Electrify connected water. Freeze wet ground or raise clouds of steam to block sightlines. Drive enemies into pits, burning surfaces, or each other with charges, hooks, and knockback. The room offers more ways to win than damage alone.</p>
+				</article>
+				<article class="feature-card feature-card-wide">
+					<h3>Plan your descent</h3>
+					<p>Chart a forward route through interconnected dungeon chambers. Weigh dangerous elite encounters against merchants, treasure, shrines, and events with choices and consequences. Spend your gold, choose your rewards, and decide when recovery matters more than another upgrade.</p>
+					<p>Every campaign begins in the Ossuary. Later floors draw from nine themed destinations, including the Sunken Foundry, Rootbound Cathedral, Glass Sepulchre, and Hollow Observatory, each with its own enemies, hazards, and boss.</p>
+					<p>Defeat the fourth floor’s boss to complete your descent—or begin again with another hero, another build, and another route.</p>
+				</article>
+			</div>
+			<dl class="game-facts">
+				<div><dt>Release</dt><dd>Early Access · Nov 4, 2026</dd></div>
+				<div><dt>Modes</dt><dd>Single-player</dd></div>
+				<div><dt>Platforms</dt><dd>Windows, SteamOS + Linux</dd></div>
+				<div><dt>Languages</dt><dd>English</dd></div>
+			</dl>
+		</div>
+	</section>
+	<ScreenshotGallery title="Heroes of Underhollow" media={media} count={12} />
+</BaseLayout>

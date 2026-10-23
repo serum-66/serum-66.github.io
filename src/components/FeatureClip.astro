@@ -1,0 +1,8 @@
+---
+// Looping silent clip from the Steam store description. WebM goes first since the MP4s are HEVC.
+const { src } = Astro.props;
+---
+<video class="feature-clip" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+	<source src={`${src}.webm`} type="video/webm" />
+	<source src={`${src}.mp4`} type="video/mp4" />
+</video>
